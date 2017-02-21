@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Face Tracker </title>
+	<script src="node_modules/tracking/build/tracking-min.js"></script>
+	<script src="node_modules/tracking/build/data/face-min.js"></script>
+	<script src="node_modules/tracking/build/data/eye-min.js"></script>
+	<script src="node_modules/tracking/build/data/mouth-min.js"></script>
+	<style>
+		.rect {
+		    border: 2px solid #a64ceb;
+		    left: 0px;
+		    position: absolute;
+		    top: 0px;
+		}
+
+		#video {
+			position: absolute;
+		    margin: 0 0 0 0;
+		}
+
+		.demo-container {
+			width: 100%;
+			margin: auto;
+		}
+
+		.overlay {
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div class="demo-frame">
+		<div class="demo-container">
+			<video id="video" width="405" height="645" autoplay muted loop src="src/assets/face.mp4"></video>
+			<canvas id="canvas" class="overlay" width="405" height="645"></canvas>
+		</div>
+	</div>
+</body>
+</html>
