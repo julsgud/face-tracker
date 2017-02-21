@@ -9,15 +9,20 @@ module.exports = {
 		filename: 'bundle.js'
 	},
 	module: {
+		rules: [{
+			test: /\.js$/, 
+			enforce: 'pre',
+			use: [{loader: "eslint-loader", options: {rules: {semi: 0}}}], 
+			exclude: /node_modules/
+		}],
 		loaders: [{
-				test: /\.js$/,
-				exclude: /node_modules/,
-				loader: 'babel-loader',
-				query: {
-					presets: ['es2015']
-				}
+			test: /\.js$/,
+			exclude: /node_modules/,
+			loaders: ['babel-loader'],
+			query: {
+				presets: ['es2015']
 			}
-		]
+		}]
 	},
 	plugins: [
         new CopyWebpackPlugin([
